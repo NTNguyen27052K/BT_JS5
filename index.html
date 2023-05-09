@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HW JS 5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="text-center py-5">BÀI TẬP JS BUỔI 5</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="d-flex align-items-start p-1">
+          <div
+            class="nav flex-column nav-pills"
+            style="width: 10%"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <!--! btnBai1 -->
+            <button
+              class="nav-link shadow my-2 active"
+              id="v-pills-bai1-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-bai1"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-bai1"
+              aria-selected="true"
+            >
+              Bài 1
+            </button>
+            <!--! btnBai2 -->
+            <button
+              class="nav-link my-2 shadow"
+              id="v-pills-bai2-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-bai2"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-bai2"
+              aria-selected="false"
+            >
+              Bài 2
+            </button>
+            <!--! btnBai3 -->
+            <button
+              class="nav-link my-2 shadow"
+              id="v-pills-bai3-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-bai3"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-bai3"
+              aria-selected="false"
+            >
+              Bài 3
+            </button>
+            <!--! btnBai4 -->
+            <button
+              class="nav-link my-2 shadow"
+              id="v-pills-bai4-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-bai4"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-bai4"
+              aria-selected="false"
+            >
+              Bài 4
+            </button>
+          </div>
+          <!--! -------------------- Content -------------------- -->
+          <div
+            class="tab-content w-100 d-flex justify-content-center"
+            id="v-pills-tabContent"
+          >
+            <!--! content bai 1 -->
+            <div
+              class="tab-pane fade show active"
+              id="v-pills-bai1"
+              role="tabpanel"
+              aria-labelledby="v-pills-bai1-tab"
+              tabindex="0"
+            >
+              <h2 class="text-center py-2">Quản lý tuyển sinh</h2>
+              <!--! -------------------- Nhập điểm -------------------- -->
+              <div class="d-flex text-center">
+                <!--! Nhập điểm chuẩn -->
+                <div class="mb-3 me-2">
+                  <label for="" class="form-label">Nhập điểm chuẩn:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="dChuan"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                </div>
+                <!--! Nhập điểm môn toán -->
+                <div class="mb-3 me-2">
+                  <label for="" class="form-label">Nhập điểm môn toán:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="dToan"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                </div>
+                <!--! Nhập điểm môn văn -->
+                <div class="mb-3 me-2">
+                  <label for="" class="form-label">Nhập điểm môn văn:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="dVan"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                </div>
+                <!--! Nhập điểm môn anh -->
+                <div class="mb-3">
+                  <label for="" class="form-label">Nhập điểm môn anh:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="dAnh"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <!--! -------------------- Chọn -------------------- -->
+              <div class="d-flex d-flex text-center">
+                <!--! Chọn khu vực -->
+                <select class="rounded w-25 w-50 p-2 me-2" id="chonKhuVuc">
+                  <option>Chọn khu vực</option>
+                  <option value="0">X</option>
+                  <option value="2">A</option>
+                  <option value="1">B</option>
+                  <option value="0.5">C</option>
+                </select>
+                <!--! Chọn đối tượng -->
+                <select class="rounded w-50 p-2" id="chonDoiTuong">
+                  <option>Chọn đối tượng</option>
+                  <option value="0">X</option>
+                  <option value="2.5">1</option>
+                  <option value="1.5">2</option>
+                  <option value="1">3</option>
+                </select>
+              </div>
+              <!--! -------------------- btn kết quả -------------------- -->
+              <div class="text-center">
+                <button class="btn btn-primary w-100 my-3" onclick="tongDiem()">
+                  Kết quả
+                </button>
+              </div>
+              <!--! -------------------- hienThi kết quả -------------------- -->
+              <div
+                class="hienThiKG rounded bg-primary bg-opacity-75 p-4 text-white text-center"
+              ></div>
+              <!--! --------------------- -->
+            </div>
+            <!--! content bai 2 -->
+            <div
+              class="tab-pane fade"
+              id="v-pills-bai2"
+              role="tabpanel"
+              aria-labelledby="v-pills-bai2-tab"
+              tabindex="0"
+            >
+              <h2 class="text-center py-2">Tính tiền điện</h2>
+              <!--! -------------------- Nhập điểm -------------------- -->
+              <div class="text-center">
+                <!--! Nhập tên -->
+                <div class="mb-3 me-2">
+                  <label for="" class="form-label">Nhập tên:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="tenChuHo"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                </div>
+                <!--! Nhập kw điện -->
+                <div class="mb-3 me-2">
+                  <label for="" class="form-label">Nhập kw điện:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="kw"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <!--! -------------------- btn kết quả -------------------- -->
+              <div class="text-center">
+                <button
+                  class="btn btn-primary w-100 my-3"
+                  onclick="tinhTienDien()"
+                >
+                  Tính tiền điên
+                </button>
+              </div>
+              <!--! -------------------- hienThi kết quả -------------------- -->
+              <div
+                class="htTienDien rounded bg-primary bg-opacity-75 p-4 text-white text-center"
+              ></div>
+              <!--! --------------------- -->
+            </div>
+            <!--! content bai 3 -->
+            <div
+              class="tab-pane fade"
+              id="v-pills-bai3"
+              role="tabpanel"
+              aria-labelledby="v-pills-bai3-tab"
+              tabindex="0"
+            >
+              <h2 class="text-center py-2">Tính thuế thu nhập cá nhân</h2>
+              <!--! -------------------- Nhập  -------------------- -->
+              <div class="text-center">
+                <!--! Nhập tên -->
+                <div class="mb-3 me-2">
+                  <label for="" class="form-label">Nhập tên:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="tenCaNhan"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                </div>
+                <!--! Nhập tổng thu nhập năm -->
+                <div class="mb-3 me-2">
+                  <label for="" class="form-label"
+                    >Nhập tổng thu nhập năm:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="tongThuNhapNam"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                </div>
+                <!--! Nhập số người thụ hưởng -->
+                <div class="mb-3 me-2">
+                  <label for="" class="form-label"
+                    >Nhập số người thụ hưởng:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="soNguoiThuHuong"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <!--! -------------------- btn kết quả -------------------- -->
+              <div class="text-center">
+                <button
+                  class="btn btn-primary w-100 my-3"
+                  onclick="tinhTienTTNCN()"
+                >
+                  Tính tiền thuế
+                </button>
+              </div>
+              <!--! -------------------- hienThi kết quả -------------------- -->
+              <div
+                class="htTienThueTNCN rounded bg-primary bg-opacity-75 p-4 text-white text-center"
+              ></div>
+              <!--! --------------------- -->
+            </div>
+            <!--! content bai 4 -->
+            <div
+              class="tab-pane fade"
+              id="v-pills-bai4"
+              role="tabpanel"
+              aria-labelledby="v-pills-bai4-tab"
+              tabindex="0"
+            >
+              <h2 class="text-center py-2">Tính tiền cáp</h2>
+              <!--! -------------------- input -------------------- -->
+              <div class="text-center d-flex align-items-center">
+                <!--! Chọn loại khách hàng -->
+                <select
+                  class="form-select me-2"
+                  style="width: 35%"
+                  id="choLoaiKH"
+                  onchange="anHienSoKeNoi()"
+                  aria-label="Default select example"
+                >
+                  <option selected>Chọn loại khạch hàng</option>
+                  <option value="nhaDan">Nhà dân</option>
+                  <option value="doanhNghiep">Doanh nghiệp</option>
+                </select>
+                <!--! Nhập mã khách hàng -->
+                <div class="my-2 me-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="maKH"
+                    aria-describedby="helpId"
+                    placeholder="Nhập mã khách hàng"
+                  />
+                </div>
+                <!--! Nhập số kênh cao cấp -->
+                <div class="my-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="soKenhCaoCap"
+                    aria-describedby="helpId"
+                    placeholder="Nhập số kênh cao cấp"
+                  />
+                </div>
+              </div>
+              <!--! Nhập số kết nối  -->
+              <div class="mb-3 me-2">
+                <input
+                  style="display: none"
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="soKetNoi"
+                  aria-describedby="helpId"
+                  placeholder="Nhập số kết nối"
+                />
+              </div>
+              <!--! -------------------- btn kết quả -------------------- -->
+              <div class="text-center">
+                <button
+                  class="btn btn-primary w-100 my-3"
+                  onclick="tinhTienCap()"
+                >
+                  Tính tiền cáp
+                </button>
+              </div>
+              <!--! -------------------- hienThi kết quả -------------------- -->
+              <div
+                class="htTienCap rounded bg-primary bg-opacity-75 p-4 text-white text-center"
+              ></div>
+              <!--! --------------------- -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
